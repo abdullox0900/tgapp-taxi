@@ -32,9 +32,9 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
         <Space direction={"vertical"} style={{ width: '90%' }}>
           {
             stepPhoto !== null && (
-              <Button id={"next"} block color='primary' onClick={() => {
+              <button id={"next"} block color='primary' onClick={() => {
                 onNext(stepPhoto)
-              }}>Далее</Button>
+              }}>Далее</button>
             )
           }
           {
@@ -46,8 +46,8 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
           }
           {
             !repeatMode && (
-              <Button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
-                } font-bold font-[ProximaNova] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`} id={"prev"} block color='primary' onClick={() => { onPrev() }}>Назад</Button>
+              <button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
+                } font-bold font-[ProximaNova] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`} id={"prev"} block color='primary' onClick={() => { onPrev() }}>Назад</button>
             )
           }
           <Button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 
-import { Button, Space } from "antd-mobile"
+import { Space } from "antd-mobile"
 import { useDarkMode } from '../../contexts/DarkModeContext'
 
 export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
@@ -127,7 +127,7 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
         {
           photoData === null && (
             <Space direction={"vertical"} style={{ width: '90%' }}>
-              <Button className='flex items-center justify-center mx-auto gap-[20px] w-full px-[20px] py-[12px] rounded-[20px] bg-[#FFD12E] font-proxima text-[24px] text-[#181C1E]' block color='primary' onClick={() => { takePhoto() }}>Сделать фото
+              <button className='flex items-center justify-center mx-auto gap-[20px] w-full px-[20px] py-[12px] rounded-[20px] bg-[#FFD12E] font-proxima text-[24px] text-[#181C1E]' block color='primary' onClick={() => { takePhoto() }}>Сделать фото
                 <svg
                   width='25'
                   height='24'
@@ -153,17 +153,17 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
                       />
                     </clipPath>
                   </defs></svg>
-              </Button>
+              </button>
             </Space>
           )
         }
         {
           photoData !== null && (
             <Space direction={"vertical"} style={{ width: '90%' }}>
-              <Button block color='primary' onClick={() => {
+              <button className='flex items-center justify-center mx-auto gap-[20px] w-full px-[20px] py-[12px] rounded-[20px] bg-[#FFD12E] font-proxima text-[24px] text-[#181C1E]' block color='primary' onClick={() => {
                 setPhotoData(null)
                 init().catch((err) => { console.error("video init failed", err) })
-              }}>Новое фото</Button>
+              }}>Новое фото</button>
             </Space>
           )
         }
