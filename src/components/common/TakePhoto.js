@@ -116,7 +116,7 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
           autoPlay muted loop
         />
       </div>
-      <div className={`${isDarkMode ? 'bg-[#202427]' : ''
+      <div ref={imgRef} className={`${isDarkMode ? 'bg-[#202427]' : ''
         } overflow-hidden w-full h-[395px] bg-[#F5F5F5] rounded-[24px] mb-[20px]`}>
         <canvas ref={canvasRef} width="99%" height="99%" style={{ display: 'none' }} />
         <img ref={imgRef} width="90%" height="495px"
