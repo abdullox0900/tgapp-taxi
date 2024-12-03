@@ -105,12 +105,14 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
 
   return (
     <>
-      <div ref={videoRef} className={`${isDarkMode ? 'bg-[#202427]' : ''
-        } overflow-hidden w-full h-[395px] bg-[#F5F5F5] rounded-[24px] mb-[20px]`}>
+      <div>
         <video
           id={`video_${code}`}
+          ref={videoRef}
           width="100%"
           height="395px"
+          className={`${isDarkMode ? 'bg-[#202427]' : ''
+            } overflow-hidden w-full h-[395px] bg-[#F5F5F5] rounded-[24px] mb-[20px]`}
           style={{ border: '1px solid #ccc', borderRadius: '16px', margin: '0 auto' }}
           autoPlay muted loop
         />
