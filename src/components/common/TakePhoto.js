@@ -24,6 +24,7 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
     //
     videoRef.current.playsInline = true
     videoRef.current.style.display = 'block'
+    videoWrapperRef.current.style.display = 'block'
     //
     imgRef.current.style.display = 'none'
 
@@ -107,8 +108,7 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
 
   return (
     <>
-      <div className={`${isDarkMode ? 'bg-[#202427]' : ''
-        } w-full h-[395px] bg-[#F5F5F5] rounded-[24px] mb-[20px]`} ref={videoWrapperRef} style={{ width: '395px' }}>
+      <div>
         <video
           id={`video_${code}`}
           ref={videoRef}
