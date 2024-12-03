@@ -1,4 +1,4 @@
-export default ArrowIcon = () => {
+const ArrowIcon = () => {
 	return (
 		<>
 			<svg
@@ -83,4 +83,4 @@ const CameraIcon = () => {
 	)
 }
 
-export { CameraIcon, CloseIcon }
+export { ArrowIcon, CameraIcon, CloseIcon }

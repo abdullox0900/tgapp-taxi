@@ -23,7 +23,7 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
       </h2>
 
       <div className={`${isDarkMode ? 'bg-[#202427]' : ''
-        } w-full h-[395px] bg-[#F5F5F5] rounded-[24px] mb-[20px]`}>
+        } overflow-hidden w-full h-[395px] bg-[#F5F5F5] rounded-[24px] mb-[20px]`}>
         <TakePhoto code={code} initCamera={initCamera} camera={camera} onPhoto={(data) => {
           setStepPhoto(data)
         }} />
