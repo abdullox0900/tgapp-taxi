@@ -1,9 +1,12 @@
 import { Button, Space } from "antd-mobile"
 import React, { useEffect, useState } from "react"
+import { useDarkMode } from '../../contexts/DarkModeContext'
 import TakePhoto from "../common/TakePhoto"
 
 export default function PhotoStep({ initCamera, camera, code, title, keyboard, repeatMode, onNext, onNextOption, onPrev, onCancel }) {
   let [stepPhoto, setStepPhoto] = useState(null)
+
+  const isDarkMode = useDarkMode()
 
   useEffect(() => {
     setStepPhoto(null)
@@ -19,13 +22,14 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
         {title}
       </h2>
 
-      <div style={{ margin: '10px 0' }}>
+      <div className={`${isDarkMode ? 'bg-[#202427]' : ''
+        } w-full h-[395px] bg-[#F5F5F5] rounded-[24px] mb-[20px]`}>
         <TakePhoto code={code} initCamera={initCamera} camera={camera} onPhoto={(data) => {
           setStepPhoto(data)
         }} />
       </div>
 
-      <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: 'center' }} >
         <Space direction={"vertical"} style={{ width: '90%' }}>
           {
             stepPhoto !== null && (
@@ -43,10 +47,13 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
           }
           {
             !repeatMode && (
-              <Button id={"prev"} block color='primary' onClick={() => { onPrev() }}>Назад</Button>
+              <Button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
+                } font-bold font-[ProximaNova] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`} id={"prev"} block color='primary' onClick={() => { onPrev() }}>Назад</Button>
             )
           }
-          <Button id={"cancel"} block color='primary' onClick={() => { onCancel() }}>Отмена</Button>
+          <Button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
+            } font-bold font-[ProximaNova] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`}
+            id={"cancel"} block color='primary' onClick={() => { onCancel() }}>Отмена</Button>
         </Space>
       </div>
     </div>
