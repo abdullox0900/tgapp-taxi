@@ -1,4 +1,4 @@
-import { Button, Space } from "antd-mobile"
+import { Space } from "antd-mobile"
 import React, { useEffect, useState } from "react"
 import { useDarkMode } from '../../contexts/DarkModeContext'
 import TakePhoto from "../common/TakePhoto"
@@ -44,15 +44,17 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
               }}>{item.title}</button>
             ))
           }
-          {
-            !repeatMode && (
-              <button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
-                } font-bold font-[ProximaNova] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`} id={"prev"} block color='primary' onClick={() => { onPrev() }}>Назад</button>
-            )
-          }
-          <Button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
-            } font-bold font-[ProximaNova] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`}
-            id={"cancel"} block color='primary' onClick={() => { onCancel() }}>Отмена</Button>
+          <div className='flex items-center justify-center gap-[20px] w-full'>
+            {
+              !repeatMode && (
+                <button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
+                  } w-full px-[20px] py-[12px] rounded-[20px] font-bold font-[ProximaNova] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`} id={"prev"} block color='primary' onClick={() => { onPrev() }}>Назад</button>
+              )
+            }
+            <button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
+              } w-full font-bold px-[20px] py-[12px] rounded-[20px] font-[ProximaNova] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`}
+              id={"cancel"} block color='primary' onClick={() => { onCancel() }}>Отмена</button>
+          </div>
         </Space>
       </div>
     </div>
