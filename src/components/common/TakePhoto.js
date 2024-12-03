@@ -105,8 +105,8 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
   }
 
   return (
-    <>
-      <div>
+    <div className="container">
+      <div className="w-full overflow-hidden">
         <video
           id={`video_${code}`}
           ref={videoRef}
@@ -163,6 +163,6 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
           )
         }
       </div>
-    </>
+    </div>
   )
 }
