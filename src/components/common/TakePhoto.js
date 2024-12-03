@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from "react"
 
 import { Button, Space } from "antd-mobile"
+import { useDarkMode } from '../../contexts/DarkModeContext'
 
 export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
+
+  const isDarkMode = useDarkMode()
 
   const videoRef = useRef(null)
   const canvasRef = useRef(null)
