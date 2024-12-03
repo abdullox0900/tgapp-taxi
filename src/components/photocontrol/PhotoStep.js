@@ -40,9 +40,9 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
           }
           {
             keyboard.map((item) => (
-              <Button className='flex items-center justify-center mx-auto gap-[20px] w-full px-[20px] py-[12px] rounded-[20px] bg-[#FFD12E] font-proxima text-[24px] text-[#181C1E]' id={item.code} block color='primary' onClick={() => {
+              <button className='flex items-center justify-center mx-auto gap-[20px] w-full px-[20px] py-[12px] rounded-[20px] bg-[#FFD12E] font-proxima text-[24px] text-[#181C1E]' id={item.code} block color='primary' onClick={() => {
                 onNextOption(item.title)
-              }}>{item.title}</Button>
+              }}>{item.title}</button>
             ))
           }
           {
