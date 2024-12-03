@@ -105,12 +105,11 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
   }
 
   return (
-    <div className="container">
+    <>
       <div className="w-full overflow-hidden">
         <video
           id={`video_${code}`}
           ref={videoRef}
-          width="100%"
           height="395px"
           style={{ width: '100%', height: '395px', border: '1px solid #ccc', borderRadius: '16px', margin: '0 auto' }}
           autoPlay muted loop
@@ -163,6 +162,6 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
           )
         }
       </div>
-    </div>
+    </>
   )
 }
