@@ -1,6 +1,9 @@
 import React from "react"
+import { useDarkMode } from '../../contexts/DarkModeContext'
 
 export default function Cancel({ text, onOK }) {
+  const isDarkMode = useDarkMode()
+
   return (
     <>
       <h3 style={{ textAlign: 'center' }} className={`${isDarkMode ? 'text-[#fff]' : ''
