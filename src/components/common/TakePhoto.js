@@ -111,7 +111,7 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
           id={`video_${code}`}
           ref={videoRef}
           height="395px"
-          style={{ width: '100%', height: '395px', border: '3px solid #FFD12E', borderRadius: '16px', margin: '0 auto' }}
+          style={{ width: '100%', height: '395px', border: '3px solid #FFD12E', borderRadius: '16px', margin: '0 auto', objectFit: 'cover' }}
           autoPlay muted loop
         />
       </div>
