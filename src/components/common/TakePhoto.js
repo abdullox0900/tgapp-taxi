@@ -119,13 +119,13 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
       <div>
         <canvas ref={canvasRef} width="99%" height="99%" style={{ display: 'none' }} />
         <img className={`${isDarkMode ? 'bg-[#202427]' : ''
-          } overflow-hidden w-full h-[395px] bg-[#F5F5F5] rounded-[24px] mb-[20px]`} ref={imgRef} width="80%" height="395px"
+          } overflow-hidden w-full h-[395px] bg-[#F5F5F5] rounded-[24px] mb-[20px]`} ref={imgRef} width="100%" height="395px"
           style={{ display: 'none', margin: '0 auto', borderRadius: '16px', border: '1px solid #ccc' }} />
       </div>
-      <div style={{ textAlign: 'center', margin: '10px 0' }}>
+      <div style={{ textAlign: 'center', margin: '20px 0' }}>
         {
           photoData === null && (
-            <button className='flex items-center justify-center mx-auto gap-[20px] w-full px-[20px] py-[12px] rounded-[20px] bg-[#FFD12E] font-proxima text-[24px] text-[#181C1E]' block color='primary' onClick={() => { takePhoto() }}>Сделать фото
+            <button className='flex items-center justify-center mx-auto gap-[20px] w-full px-[20px] py-[12px] rounded-[20px] bg-[#FFD12E] text-[24px] text-[#181C1E]' block color='primary' onClick={() => { takePhoto() }}>Сделать фото
               <svg
                 width='25'
                 height='24'
