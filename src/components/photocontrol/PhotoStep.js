@@ -32,7 +32,7 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
         {
           stepPhoto !== null && (
             <button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
-              } w-full px-[20px] py-[12px] rounded-[20px] font-bold mb-[20p] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`} id={"next"} block color='primary' onClick={() => {
+              } w-full px-[20px] py-[12px] rounded-[20px] font-bold mb-[20px] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`} id={"next"} block color='primary' onClick={() => {
                 onNext(stepPhoto)
               }}>Далее</button>
           )
