@@ -1,37 +1,37 @@
-import React, {useEffect, useState} from "react";
-import {Button, Space} from "antd-mobile";
+import { Button, Space } from "antd-mobile"
+import React, { useEffect, useState } from "react"
 
-export default function TextInputStep({code, title, keyboard, repeatMode, onNext, onPrev, onCancel}) {
-  let [stepText, setStepText] = useState("");
+export default function TextInputStep({ code, title, keyboard, repeatMode, onNext, onPrev, onCancel }) {
+  let [stepText, setStepText] = useState("")
 
   useEffect(() => {
-    setStepText("");
+    setStepText("")
   }, [code])
 
   return (
     <>
-      <h3 style={{textAlign: 'center'}}>
+      <h3 style={{ textAlign: 'center' }}>
         {title}
       </h3>
 
-      <div style={{textAlign: 'center', marginBottom: 20}}>
+      <div style={{ textAlign: 'center', marginBottom: 20 }}>
         <textarea rows={4}
-                  style={{
-                    width: '90%',
-                    height: '150px',
-                    padding: '12px 20px',
-                    boxSizing: 'border-box',
-                    border: '2px solid #ccc',
-                    borderRadius: '4px',
-                    backgroundColor: '#f8f8f8',
-                    fontSize: '16px', resize: 'none'
-                  }}
-                  onChange={(e) => { setStepText(e.target.value) }}
+          style={{
+            width: '90%',
+            height: '150px',
+            padding: '12px 20px',
+            boxSizing: 'border-box',
+            border: '2px solid #ccc',
+            borderRadius: '4px',
+            backgroundColor: '#f8f8f8',
+            fontSize: '16px', resize: 'none'
+          }}
+          onChange={(e) => { setStepText(e.target.value) }}
         />
       </div>
 
-      <div style={{textAlign: 'center'}}>
-        <Space direction={"vertical"} style={{width: '90%'}}>
+      <div style={{ textAlign: 'center' }}>
+        <Space direction={"vertical"} style={{ width: '90%' }}>
           {
             keyboard.map((item, index) => (
               <Button id={item.code} block color='primary' onClick={() => {
@@ -40,9 +40,9 @@ export default function TextInputStep({code, title, keyboard, repeatMode, onNext
             ))
           }
           <Button id={"next"} block color='primary' onClick={() => {
-            if(!stepText) {
-              alert(title);
-              return;
+            if (!stepText) {
+              alert(title)
+              return
             }
             onNext(stepText)
           }}>Далее</Button>
@@ -51,7 +51,7 @@ export default function TextInputStep({code, title, keyboard, repeatMode, onNext
               <Button id={"prev"} block color='primary' onClick={() => { onPrev() }}>Назад</Button>
             )
           }
-          <Button id={"cancel"} block color='primary' onClick={() => { onCancel() }}>Отмена</Button>
+          {/* <Button id={"cancel"} block color='primary' onClick={() => { onCancel() }}>Отмена</Button> */}
         </Space>
       </div>
     </>

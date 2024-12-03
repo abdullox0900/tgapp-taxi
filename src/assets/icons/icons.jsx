@@ -1,3 +1,6 @@
+import React from 'react'
+import { useDarkMode } from '../../contexts/DarkModeContext'
+
 const ArrowIcon = () => {
 	return (
 		<>
@@ -46,9 +49,6 @@ const CloseIcon = () => {
 		</>
 	)
 }
-
-import React from 'react'
-import { useDarkMode } from '../../contexts/DarkModeContext'
 
 const CameraIcon = () => {
 	return (

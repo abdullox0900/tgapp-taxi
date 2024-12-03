@@ -17,7 +17,8 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
 
   return (
     <div className='container'>
-      <h2 style={{ textAlign: 'center' }} className='text-[24px] mb-[20px] font-proxima font-bold text-center leading-[28px]'>
+      <h2 style={{ textAlign: 'center' }} className={`${isDarkMode ? 'text-[#fff]' : ''
+        } text-[24px] mb-[20px] font-proxima font-bold text-center`}>
         {title}
       </h2>
 
@@ -31,7 +32,7 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
         {
           stepPhoto !== null && (
             <button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
-              } w-full px-[20px] py-[12px] rounded-[20px] font-bold mb-[20px] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`} id={"next"} block color='primary' onClick={() => {
+              } w-full px-[20px] py-[12px] rounded-[20px] font-bold mb-[20p] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`} id={"next"} block color='primary' onClick={() => {
                 onNext(stepPhoto)
               }}>Далее</button>
           )
@@ -50,9 +51,9 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
                 } w-full px-[20px] py-[12px] rounded-[20px] font-bold text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`} id={"prev"} block color='primary' onClick={() => { onPrev() }}>Назад</button>
             )
           }
-          <button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
+          {/* <button className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
             } w-full font-bold px-[20px] py-[12px] rounded-[20px] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`}
-            id={"cancel"} block color='primary' onClick={() => { onCancel() }}>Отмена</button>
+            id={"cancel"} block color='primary' onClick={() => { onCancel() }}>Отмена</button> */}
         </div>
       </div>
     </div>
