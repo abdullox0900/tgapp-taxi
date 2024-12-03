@@ -24,7 +24,6 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
     //
     videoRef.current.playsInline = true
     videoRef.current.style.display = 'block'
-    videoWrapperRef.current.style.display = 'block'
     //
     imgRef.current.style.display = 'none'
 
@@ -102,7 +101,6 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
 
     // hide video and show image
     videoRef.current.style.display = 'none'
-    videoWrapperRef.current.style.display = 'none'
     imgRef.current.style.display = 'block'
   }
 
