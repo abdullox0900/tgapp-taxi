@@ -7,6 +7,7 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
   const isDarkMode = useDarkMode()
 
   const videoRef = useRef(null)
+  const videoWrapperRef = useRef(null)
   const canvasRef = useRef(null)
   const imgRef = useRef(null)
 
@@ -100,19 +101,19 @@ export default function TakePhoto({ initCamera, camera, code, onPhoto }) {
 
     // hide video and show image
     videoRef.current.style.display = 'none'
+    videoWrapperRef.current.style.display = 'none'
     imgRef.current.style.display = 'block'
   }
 
   return (
     <>
-      <div className='w-full'>
+      <div className={`${isDarkMode ? 'bg-[#202427]' : ''
+        } w-full h-[395px] bg-[#F5F5F5] rounded-[24px] mb-[20px]`} ref={videoWrapperRef}>
         <video
           id={`video_${code}`}
           ref={videoRef}
           width="100%"
           height="395px"
-          className={`${isDarkMode ? 'bg-[#202427]' : ''
-            } w-full h-[395px] bg-[#F5F5F5] rounded-[24px] mb-[20px]`}
           style={{ border: '1px solid #ccc', borderRadius: '16px', margin: '0 auto' }}
           autoPlay muted loop
         />
