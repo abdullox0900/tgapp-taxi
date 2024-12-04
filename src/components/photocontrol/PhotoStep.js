@@ -15,6 +15,14 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
     console.log("[stepPhoto]", stepPhoto)
   }, [stepPhoto])
 
+  // Tugma stilini aniqlash uchun funksiya
+  const getButtonStyle = (buttonTitle) => {
+    if (buttonTitle.toLowerCase() === 'нет') {
+      return 'bg-[#FF3B30] text-white' // Qizil tugma
+    }
+    return 'bg-[#FFD12E] text-[#181C1E]' // Default sariq tugma
+  }
+
   return (
     <div className='container'>
       <h2 style={{ textAlign: 'center' }} className={`${isDarkMode ? 'text-[#fff]' : ''
@@ -32,10 +40,9 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
         {
           keyboard.map((item) => (
             <button
-              className='flex items-center justify-center mx-auto gap-[20px] w-full px-[20px] py-[12px] rounded-[20px] bg-[#FFD12E] font-proxima text-[24px] text-[#181C1E]'
+              key={item.code}
+              className={`flex items-center justify-center mx-auto gap-[20px] w-full px-[20px] py-[12px] mb-[20px] rounded-[20px] font-proxima text-[24px] ${getButtonStyle(item.title)}`}
               id={item.code}
-              block
-              color='primary'
               onClick={() => {
                 onNextOption(item.title)
               }}
@@ -50,8 +57,6 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
             <button
               className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''} w-full px-[20px] py-[12px] rounded-[20px] font-bold text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`}
               id={"prev"}
-              block
-              color='primary'
               onClick={() => { onPrev() }}
             >
               Назад
@@ -63,8 +68,6 @@ export default function PhotoStep({ initCamera, camera, code, title, keyboard, r
             <button
               className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''} w-full px-[20px] py-[12px] rounded-[20px] font-bold text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`}
               id={"next"}
-              block
-              color='primary'
               onClick={() => { onNext(stepPhoto) }}
             >
               Далее
