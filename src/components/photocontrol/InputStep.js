@@ -9,6 +9,30 @@ export default function TextInputStep({ code, title, keyboard, repeatMode, onNex
     setStepText("")
   }, [code])
 
+  // Tugma stilini aniqlash uchun funksiya
+  const getButtonStyle = (buttonTitle) => {
+    if (buttonTitle.toLowerCase() === 'нет') {
+      return 'bg-[#FF3B30] text-white' // Qizil tugma
+    }
+
+    // Agar title maxsus matn bo'lsa va tugma "да" bo'lsa
+    if (title === 'Световые приборы работают? Если не все работает - укажите в комментарии' &&
+      buttonTitle.toLowerCase() === 'да') {
+      return 'bg-[#34C759] text-white' // Yashil tugma
+    }
+
+    return 'bg-[#FFD12E] text-[#181C1E]' // Default sariq tugma
+  }
+
+  // Tugma matnini aniqlash uchun funksiya
+  const getButtonText = (buttonTitle) => {
+    if (title === 'Световые приборы работают? Если не все работает - укажите в комментарии' &&
+      buttonTitle.toLowerCase() === 'да') {
+      return 'Да, работают'
+    }
+    return buttonTitle
+  }
+
   return (
     <div className='container'>
       <h2 style={{ textAlign: 'center' }}
@@ -32,13 +56,13 @@ export default function TextInputStep({ code, title, keyboard, repeatMode, onNex
         {keyboard.map((item) => (
           <button
             key={item.code}
-            className='flex items-center justify-center mx-auto gap-[20px] w-full px-[20px] py-[12px] rounded-[20px] bg-[#FFD12E] font-proxima text-[24px] text-[#181C1E] mb-[12px]'
+            className={`flex items-center justify-center mx-auto gap-[20px] w-full px-[20px] py-[12px] rounded-[20px] font-proxima text-[24px] mb-[20px] ${getButtonStyle(item.title)}`}
             id={item.code}
             onClick={() => {
               onNext(item.title)
             }}
           >
-            {item.title}
+            {getButtonText(item.title)}
           </button>
         ))}
 
