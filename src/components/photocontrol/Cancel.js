@@ -5,15 +5,18 @@ export default function Cancel({ text, onOK }) {
   const isDarkMode = useDarkMode()
 
   return (
-    <>
-      <h3 style={{ textAlign: 'center' }} className={`${isDarkMode ? 'text-[#fff]' : ''
-        } text-[24px] mb-[20px] font-proxima font-bold text-center`}>
+    <div className='container'>
+      <h2 className={`${isDarkMode ? 'text-[#fff]' : ''} text-[24px] mb-[20px] font-proxima font-bold text-center`}>
         {text}
-      </h3>
-      <div style={{ textAlign: 'center' }}>
-        <button onClick={() => { onOK() }} className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''
-          } flex items-center gap-[20px] w-full font-bold px-[20px] py-[12px] rounded-[20px] text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`}>Закрыть приложение </button>
+      </h2>
+      <div>
+        <button
+          onClick={() => { onOK() }}
+          className={`${isDarkMode ? 'text-[#fff] border-[#fff]' : ''} flex items-center justify-center gap-[20px] w-full px-[20px] py-[12px] rounded-[20px] font-bold text-[24px] text-[#181C1E] bg-transparent border-[2px] border-solid border-[#181C1E]`}
+        >
+          Закрыть приложение
+        </button>
       </div>
-    </>
+    </div>
   )
 }
