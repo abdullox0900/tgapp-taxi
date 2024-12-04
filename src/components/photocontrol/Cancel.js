@@ -1,4 +1,5 @@
 import React from "react"
+import ImgStep2 from '../../assets/img/img-people-2.png'
 import { useDarkMode } from '../../contexts/DarkModeContext'
 
 export default function Cancel({ text, onOK }) {
@@ -9,6 +10,15 @@ export default function Cancel({ text, onOK }) {
       <h2 className={`${isDarkMode ? 'text-[#fff]' : ''} text-[24px] mb-[20px] font-proxima font-bold text-center`}>
         {text}
       </h2>
+
+      <div className={`${isDarkMode ? 'bg-[#202427]' : ''} mx-auto relative rounded-[24px] bg-[#F5F5F5] w-[343px] h-[435px] mb-[20px]`}>
+        <img
+          className='absolute left-[50%] bottom-0 translate-x-[-50%]'
+          src={ImgStep2}
+          alt=''
+        />
+      </div>
+
       <div>
         <button
           onClick={() => { onOK() }}
